@@ -9,6 +9,10 @@
 import UIKit
 
 class PostCollectionViewCell: UICollectionViewCell {
+    
+    let miLikeService = LikeService()
+    
+    
     static let identifier: String = "PostCell"
     public var post: Post? {
         didSet {
@@ -38,5 +42,23 @@ class PostCollectionViewCell: UICollectionViewCell {
             self.imageView.image = img
         }
     }
+    
+    
+    
+    @IBAction func Like(_ sender: Any) {
+        
+        miLikeService.call(idFoto: post?.id){ idFoto in
+            print("Se dio un like")
+        }
+    }
+    
+    
+    @IBAction func showComents(_ sender: Any) {
+        print("prueba comentarios")
+            
+            
+    }
+    
+    
 
 }

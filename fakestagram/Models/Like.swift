@@ -9,5 +9,9 @@
 import Foundation
 
 struct Like: Codable {
-    let author: Author
+    let idFoto: Int?
+}
+
+struct showLike: Codable {
+    let idFoto: String?
 }
